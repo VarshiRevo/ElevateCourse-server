@@ -23,7 +23,7 @@ exports.app.use(express_1.default.json({ limit: "50mb" }));
 exports.app.use((0, cookie_parser_1.default)());
 // cors => cross origin resource sharing
 exports.app.use((0, cors_1.default)({
-    origin: ['https://elevatecourse-client.vercel.app', 'https://elevatecourse-client-5ieqp3iq5-varshigas-projects.vercel.app'],
+    origin: ['https://elevatecourse-client.vercel.app', 'https://elevatecourse-client-5ieqp3iq5-varshigas-projects.vercel.app','http://localhost:3000'],
     credentials: true,
 }));
 
