@@ -22,9 +22,17 @@ exports.app.use(express_1.default.json({ limit: "50mb" }));
 // cookie parser
 exports.app.use((0, cookie_parser_1.default)());
 // cors => cross origin resource sharing
+const allowedOrigins = ['http://localhost:3000', 'https://your-production-domain.com'];
+
 exports.app.use((0, cors_1.default)({
-       origin: '*', // Allow any origin
-    credentials: true,
+    origin: (origin, callback) => {
+        if (allowedOrigins.includes(origin) || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true, // Allow cookies or authorization headers
 }));
 
 // api requests limit
