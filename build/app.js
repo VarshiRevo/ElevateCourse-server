@@ -22,7 +22,7 @@ exports.app.use(express_1.default.json({ limit: "50mb" }));
 // cookie parser
 exports.app.use((0, cookie_parser_1.default)());
 // cors => cross origin resource sharing
-const allowedOrigins = ['http://localhost:3000', 'https://elevatecourse.onrender.com'];
+const allowedOrigins = ['http://localhost:3000', 'https://elevatecourse.onrender.com','https://eduacademia.onrender.com'];
 
 exports.app.use((0, cors_1.default)({
     origin: (origin, callback) => {
